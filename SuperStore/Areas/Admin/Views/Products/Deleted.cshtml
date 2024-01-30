@@ -1,0 +1,133 @@
+﻿@model ProductsQueryModel
+
+@{
+    ViewBag.Title = "Deleted Products Administration";
+    ViewBag.IsDeleted = true;
+}
+
+
+<h1 class="text-center mt-2 mb-3">@ViewBag.Title</h1>
+
+@if (@Model.SearchTerm != null)
+{
+    <h4>You have searched - @Model.SearchTerm</h4>
+    <h4>Result : @Model.Products.Count()</h4>
+
+}
+
+
+<form method="get">
+
+    <div class="row mb-mt-3 mb-3">
+
+        <div class="form-group col-md-2">
+            <label asp-for="Category"></label>
+            <select asp-for="Category" id="selectcat" class="form-control">
+                <option value="" class="rhth">All</option>
+                @foreach (var productCategory in Model.Categories)
+                {
+                    <option class="@productCategory.Id" value="@productCategory.Name">@productCategory.Name</option>
+                }
+            </select>
+            <span asp-validation-for="Category" class="small text-danger"></span>
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="SubCategory"></label>
+            <select asp-for="SubCategory" id="selectprod" class="form-control">
+                <option value="" class="rhth23">All</option>
+                @foreach (var productSubCategory in Model.SubCategories)
+                {
+                    <option value="@productSubCategory.Name" class="selectors @productSubCategory.CategoryId">@productSubCategory.Name</option>
+                }
+
+            </select>
+            <span asp-validation-for="SubCategory" class="small text-danger"></span>
+        </div>
+
+
+        <div class="form-group col-md-3">
+            <div class="form-group">
+                <label asp-for="ProductSorting"></label>
+                <select asp-for="ProductSorting" class="form-control" asp-items="Html.GetEnumSelectList<ProductSorting>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="ProductSorting" class="small text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="form-inline col-md-3">
+            <div class="form-group">
+                <input asp-for="SearchTerm" class="form-control mr-sm-2" placeholder="Search">
+                <button asp-controller="Products" asp-action="Deleted" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                <span asp-validation-for="SearchTerm" class="small text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+<partial name="_ProductsPartial" model="@Model.Products" />
+
+
+@{
+    var previousPage = Model.CurrentPage - 1;
+    if (previousPage < 1)
+    {
+        previousPage = 1;
+    }
+
+    var maxPage = Math.Ceiling((double)Model.TotalProducts / ProductsQueryModel.ProductsPerPage);
+}
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <a class="btn btn-primary @(Model.CurrentPage==1 ? "disabled":string.Empty)"
+           asp-controller="Products"
+           asp-action="Deleted"
+           asp-route-category="@Model.Category"
+           asp-route-searchTerm="@Model.SearchTerm"
+           asp-route-productSorting="@Model.ProductSorting"
+           asp-route-currentPage="@previousPage"><<</a>
+    </div>
+    <div class="col-md-6">
+        <a class="btn btn-primary float-right @(Model.CurrentPage==maxPage || !Model.Products.Any()  ? "disabled" : string.Empty)"
+           asp-controller="Products"
+           asp-action="Deleted"
+           asp-route-category="@Model.Category"
+           asp-route-searchTerm="@Model.SearchTerm"
+           asp-route-productSorting="@Model.ProductSorting"
+           asp-route-currentPage="@(Model.CurrentPage+1)">>></a>
+    </div>
+</div>
+
+@section Scripts {
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"
+            integrity="sha256-BDmtN+79VRrkfamzD16UnAoJP8zMitAz093tvZATdiE="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var allOptions = $('#selectprod option')
+            $('#selectcat').change(function () {
+                $('#selectprod option').remove()
+                var classN = $('#selectcat option:selected').prop('class');
+                var opts = allOptions.filter('.' + classN);
+                $.each(opts, function (i, j) {
+                    $(j).appendTo('#selectprod');
+                });
+            });
+        });
+
+
+
+    </script>
+}
