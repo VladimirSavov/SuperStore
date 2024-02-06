@@ -4197,7 +4197,7 @@ textarea.form-control-lg {
 }
 
 .navbar {
-    --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-x: 1rem;
     --bs-navbar-padding-y: 0.5rem;
     --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
     --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
@@ -13476,11 +13476,15 @@ textarea.form-control-lg {
     background-image: url(../images/orange-background.jpg);
 }
 #background-title {
-    background-image: url(../images/title-banner.jpg);
+    background-image: url(../images/banner-title.jpg);
     border-bottom: 2px solid #992600;
 }
 #header-menu {
     height: 35px;
     border-bottom: 2px solid #992600;
     background-color: #ff4000;
+}
+.page-footer {
+    border-top: 2px solid #992600;
+}
     /*# sourceMappingURL=bootstrap.min.css.map */
