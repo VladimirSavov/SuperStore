@@ -7280,7 +7280,7 @@ button.bg-dark:focus {
 
 .flex-grow-1 {
     -ms-flex-positive: 1 !important;
-    flex-grow: 1 !important;
+    flex-grow: 1.5 !important;
 }
 
 .flex-shrink-0 {
