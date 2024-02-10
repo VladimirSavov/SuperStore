@@ -4054,8 +4054,8 @@ textarea.form-control-lg {
         }
 
 .nav {
-    --bs-nav-link-padding-x: 1rem;
-    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-padding-x: 0rem;
+    --bs-nav-link-padding-y: 0rem;
     --bs-nav-link-font-weight:;
     --bs-nav-link-color: var(--bs-link-color);
     --bs-nav-link-hover-color: var(--bs-link-hover-color);
@@ -9787,6 +9787,7 @@ textarea.form-control-lg {
     .d-sm-inline-grid {
         display: inline-grid !important
     }
+    }
 
     .d-sm-table {
         display: table !important
@@ -13473,7 +13474,7 @@ textarea.form-control-lg {
     color: #333
 }
 #background-site {
-    background-image: url(../images/orange-background.jpg);
+    background-image: url(../images/orange_background.jpg);
 }
 #background-title {
     background-image: url(../images/banner-title.jpg);
