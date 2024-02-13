@@ -23,20 +23,20 @@
 
             </div>
         </nav>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow" id="background-title">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow form-inline" id="background-title">
             <div class="container">
                 <a class="navbar-brand mb-0 h5" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/images/LogoMakr-SiteLogo.png" alt="My Logo" width="175" height="80" title="Company Logo" />
                     </a>
                 <form method="get" class="form-inline">
                     <input name="SearchTerm" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button asp-controller="Products" asp-action="All" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                    <button asp-controller="Products" asp-action="All" class="btn btn-outline-dark my-2 my-sm-0" style="background-color: #ff4000" type="submit">Search</button>
                 </form>
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg justify-content-between navbar-light mb-3" id="background-site">
             <div class="col-md-2"></div>
-            <ul class="navbar-nav flex-grow-1 ml-5" style="display: flex; justify-content: center;">
+            <ul class="navbar-nav nav-menu flex-grow-1 ml-5">
 
                 <li class="nav-item">
                     <a class="nav-link text-white ml-5" asp-area="" asp-controller="Products" asp-action="All" asp-route-category="Games and toys"><h4>Games and toys</h4></a>
@@ -60,7 +60,7 @@
         </nav>
 
     </header>
-    <div class="container" @* style="background-color: #fcb982" *@>
+    <div class="container nav-menu">
         <main role="main" class="pb-3">
             @if (this.TempData.ContainsKey(WebConstants.GlobalErrorMessageKey))
             {
