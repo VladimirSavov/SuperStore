@@ -4077,6 +4077,9 @@ textarea.form-control-lg {
     border: 0;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
 }
+.nav-link:hover{
+    color: white !important;
+}
 
 @media (prefers-reduced-motion:reduce) {
     .nav-link {
@@ -9071,10 +9074,11 @@ textarea.form-control-lg {
 
 .text-dark {
     --bs-text-opacity: 1;
-    color: rgba(var(--bs-dark-rgb),var(--bs-text-opacity)) !important
+    color: rgba(var(--bs-dark-rgb),var(--bs-text-opacity)) !important;
+    transition: all 0.4s linear;
 }
 .text-dark:hover {
-    color: white; 
+    color: white !important; 
 }
 
 .text-black {
@@ -9085,6 +9089,9 @@ textarea.form-control-lg {
 .text-white {
     --bs-text-opacity: 1;
     color: rgba(var(--bs-white-rgb),var(--bs-text-opacity)) !important
+}
+.text-white:hover {
+    color: #333 !important;
 }
 
 .text-body {
@@ -13518,4 +13525,14 @@ textarea.form-control-lg {
         width: auto;
         vertical-align: middle;
     }
+.hover {
+    color: black;
+    transition: all 0.4s linear;
+}
+.hover:hover{
+    color: white;
+}
+.float-left{
+    float: left;
+}
     /*# sourceMappingURL=bootstrap.min.css.map */
