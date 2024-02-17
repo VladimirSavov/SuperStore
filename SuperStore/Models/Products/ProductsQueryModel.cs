@@ -11,16 +11,16 @@
 
         public int CurrentPage { get; set; } = 1;
 
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
-        public string SubCategory { get; set; }
+        public string? SubCategory { get; set; }
 
-        public IEnumerable<ProductCategoryServiceModel> Categories { get; set; }
+        public IEnumerable<ProductCategoryServiceModel>? Categories { get; set; }
 
-        public IEnumerable<ProductSubCategoryServiceModel> SubCategories { get; set; }
+        public IEnumerable<ProductSubCategoryServiceModel>? SubCategories { get; set; }
 
 
-        public string SearchTerm { get; init; }
+        public string? SearchTerm { get; init; }
 
         public ProductSorting ProductSorting { get; init; }
 

@@ -724,7 +724,8 @@ progress {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    font-weight: 500;
 }
 
 @media (min-width:576px) {
@@ -773,7 +774,8 @@ progress {
     flex-wrap: wrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x))
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    justify-content: space-between;
 }
 
     .row > * {
@@ -7767,6 +7769,9 @@ textarea.form-control-lg {
 .float-start {
     float: left !important
 }
+.float-right{
+    float: right !important
+}
 
 .float-end {
     float: right !important
@@ -13534,5 +13539,8 @@ textarea.form-control-lg {
 }
 .float-left{
     float: left;
+}
+.form-group {
+    margin-bottom: 1.5rem;
 }
     /*# sourceMappingURL=bootstrap.min.css.map */
