@@ -7,7 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStore", "SuperStore\Su
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1B94F1B0-B61C-4E6A-A490-3D289A988678}"
 	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
 		TextFile2.txt = TextFile2.txt
 	EndProjectSection
 EndProject
